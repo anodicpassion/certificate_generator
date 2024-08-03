@@ -133,7 +133,7 @@ def app_window(default_position, default_certificate, default_file, default_outp
     output_path_new.grid(column=1, row=3)
     tk.Button(frame_1, text="Browse", command=ask_for_output_path).grid(column=2, row=3)
 
-    tk.Label(frame_1, text="Output Formate: ").grid(column=0, row=4)
+    tk.Label(frame_1, text="Output Format: ").grid(column=0, row=4)
     dropdown = tk.OptionMenu(frame_1, selected_format, *options)
     dropdown.grid(column=1, row=4)
 
