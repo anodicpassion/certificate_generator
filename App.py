@@ -21,7 +21,11 @@ def print_certificate(image_path, text, font_path, font_size, position, text_col
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(font_path, font_size)
     text_width = draw.textlength(text, font=font)
-
+    if text + "." + str(file_format).lower() in os.listdir(output_path):
+        i = 1
+        while text + f"_{i}" + "." + str(file_format).lower() in os.listdir(output_path):
+            i += 1
+        text = text + f"_{i}"
     if alignment == 'center':
         position = (position[0] - text_width // 2, position[1])
 
